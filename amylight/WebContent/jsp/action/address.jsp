@@ -74,7 +74,7 @@
 			rs1.close();
 			
 			//retrieve data for current page
-			String sql2="select * from address where username='"+username+"'order by name limit"+start+","+pageSize;
+			String sql2="select * from address where username='"+username+"'order by name limit "+start+","+pageSize;
 			List<Hashtable<String,String>>list=new ArrayList<Hashtable<String,String>>();
 			ResultSet rs2=stm.executeQuery(sql2);
 			ResultSetMetaData rsmd=rs2.getMetaData();
@@ -83,11 +83,11 @@
 				//search for each row
 				Hashtable<String,String>hash=new Hashtable<String,String>();
 				for(int i=1;i<=cols;i++){
-					String field=(String)(rsmd.getCatalogName(i));	//row name
+					String field=(String)(rsmd.getColumnName(i));	//row name
 					String value=(String)(rs2.getString(i));	//row value
 					if(value==null)
 						value="";
-					hash.put(field, value);
+					hash.put(field,value);
 				}
 				//save current row
 				list.add(hash);
