@@ -39,7 +39,7 @@
 		<table width="100%" class="position">
 			<tr>
 				<td>current page >> Address Book</td>
-				<td align="right"><a href="action/address_add.jsp?method=add&pageSize=<%=pageSize%>&pageNo=<%=pageNo%>">New Contact</a></td>
+				<td align="right"><a href="../address_add.jsp?method=add&pageSize=<%=pageSize%>&pageNo=<%=pageNo%>">New Contact</a></td>
 				<td width="20"></td>
 			</tr>
 		</table>

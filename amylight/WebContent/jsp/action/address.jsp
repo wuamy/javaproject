@@ -29,6 +29,19 @@
 			//search for db
 			list(request,drv,url,usr,pwd,username,pageSize,pageNo);
 			topage="../address.jsp";
+		} else if(method.equals("delete")){
+			//delete row
+			delete(request,drv,url,usr,pwd,username);
+			list(request,drv,url,usr,pwd,username,pageSize,pageNo);
+			topage="../address.jsp";
+		} else if(method.equals("add")){
+			topage="../address_add.jsp";//go to new page
+		} else if(method.equals("insert")){
+			//execute insert
+			insert(request,drv,url,usr,pwd,username);
+			//search for data
+			list(request,drv,url,usr,pwd,username,pageSize,pageNo);
+			topage="../address.jsp";
 		}
 	}
 %>
@@ -107,6 +120,68 @@
 	}	
 	
 %>
+
+<%--delete a record --%>
+<%!public boolean delete(HttpServletRequest request, String drv, String url, 
+		String usr, String pwd, String username){
+	try{
+		//create db connection
+		Class.forName(drv).newInstance();
+		Connection conn = DriverManager.getConnection(url,usr,pwd);
+		Statement stm = conn.createStatement();
+		//according to ID and delete SQL, 
+		String id = request.getParameter("id");
+		String sql = "delete from address where id="+id;
+		stm.executeUpdate(sql);
+		stm.close();
+		conn.close();
+	} catch(Exception e){
+		e.printStackTrace();
+		return false;
+	}finally {}
+	return true;
+}
+
+%>
+
+<%--insert a record --%>
+<%!public boolean insert(HttpServletRequest request, String drv, String url,
+		String usr, String pwd, String username){
+	try {
+		//create db connection
+		Class.forName(drv).newInstance();
+		Connection conn=DriverManager.getConnection(url,usr,pwd);
+		Statement stm = conn.createStatement();
+		
+		//retrieve new data param
+		String name = request.getParameter("name");
+		String sex = request.getParameter("sex");
+		String mobile = request.getParameter("mobile");
+		String email = request.getParameter("email");
+		String company = request.getParameter("company");
+		String address = request.getParameter("address");
+		String zipcode = request.getParameter("zipcode");
+		
+		// make SQL
+		String sql = "insert into address(username, name, sex, mobile, email, company, address, zipcode)";
+		sql+="value('"+ username + "','" + name + "','" + sex +"','" + mobile + "','" + email + "','"
+				+company+"','" + address + "','" + zipcode +"')";
+		
+		//execute sql query
+		stm.executeUpdate(sql);
+		stm.close();
+		conn.close();
+	
+	} catch(Exception e){
+		e.printStackTrace();
+		return false;
+	
+	} finally {
+		
+	}
+	return true;
+}%>
+
 
 
 

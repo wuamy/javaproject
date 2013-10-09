@@ -39,6 +39,12 @@ function validAddressAdd(theform){
 <body>
 <div align="center">
 
+<%
+String pageSize=(String)request.getAttribute("pageSize");
+String pageNo=(String)request.getAttribute("pageNo");
+
+%>
+
 <table height="100%" width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td colspan="2" height="108">
@@ -54,12 +60,15 @@ function validAddressAdd(theform){
 		<table width="100%" class="position">
 			<tr>
 				<td>current page >> Address Book&gt;&gt; Add New Address</td>
-				<td align="right"><a href="address.jsp">Return AddressBook Home</a></td>
+				<td align="right"><a href="action/address.jsp?method=list&pageSize=<%=pageSize %>&pageNo=<%=pageNo%>">Return AddressBook Home</a></td>
+				<input type="hidden" name="pageSize" value="<%=pageSize %>">
+				<input type="hidden" name="pageNo" value="<%=pageNo %>">
+				
 				<td width="20"></td>
 			</tr>
 		</table>
 		
-		<form name="form1" action="address_add.jsp" method="post" onsubmit="return validAddressAdd(this);"><b></b>
+		<form name="form1" action="action/address.jsp?method=insert" method="post" onsubmit="return validAddressAdd(this);"><b></b>
 		<table border="0" width="100%">
 			<tr>
 				<td>Name:</td>
