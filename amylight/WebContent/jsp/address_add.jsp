@@ -61,14 +61,17 @@ String pageNo=(String)request.getAttribute("pageNo");
 			<tr>
 				<td>current page >> Address Book&gt;&gt; Add New Address</td>
 				<td align="right"><a href="action/address.jsp?method=list&pageSize=<%=pageSize %>&pageNo=<%=pageNo%>">Return AddressBook Home</a></td>
-				<input type="hidden" name="pageSize" value="<%=pageSize %>">
-				<input type="hidden" name="pageNo" value="<%=pageNo %>">
+				
 				
 				<td width="20"></td>
 			</tr>
 		</table>
 		
-		<form name="form1" action="action/address.jsp?method=insert" method="post" onsubmit="return validAddressAdd(this);"><b></b>
+		<form name="form1" action="action/address.jsp?method=insert" method="post" 
+			onsubmit="return validAddressAdd(this);">
+		<input type="hidden" name="pageSize" value="<%=pageSize %>">
+		<input type="hidden" name="pageNo" value="<%=pageNo %>">
+		
 		<table border="0" width="100%">
 			<tr>
 				<td>Name:</td>

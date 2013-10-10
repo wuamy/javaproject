@@ -69,7 +69,7 @@
 				<td><%=hash.get("email") %></td>
 				<td><%=hash.get("company") %></td>
 				<td><%=hash.get("address") %></td>
-				<td><%=hash.get("postcode") %></td>
+				<td><%=hash.get("zipcode") %></td>
 				<td><a href="action/address.jsp?method=edit&id=<%=id%>&pageSize=<%=pageSize%>&pageNo=<%=pageNo %>">Modify</a>&nbsp;&nbsp;
 				<a href="action/address.jsp?method=delete&id=<%=id%>&pageSize=<%=pageSize%>&pageNo=<%=pageNo %>">Cancel</a></td>
 			</tr>

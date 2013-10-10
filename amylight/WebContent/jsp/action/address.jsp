@@ -155,7 +155,7 @@
 		
 		//retrieve new data param
 		String name = request.getParameter("name");
-		String sex = request.getParameter("sex");
+		String sex = request.getParameter("gender");
 		String mobile = request.getParameter("mobile");
 		String email = request.getParameter("email");
 		String company = request.getParameter("company");
@@ -181,6 +181,43 @@
 	}
 	return true;
 }%>
+
+<%--This is edit() func --%>
+<%!public boolean select(HttpServletRequest request, String drv, String url, 
+		String usr, String pwd, String username) {
+	try {
+		//create db connection 
+		Class.forName(drv).newInstance();
+		Connection conn = DriverManager.getConnection(url, usr, pwd);
+		Statement stm = conn.createStatement();
+		
+		//search current record based on ID
+		String id=request.getParameter("id");
+		String sql = "select * from address where id=" + id;
+		ResultSet rs = stm.executeQuery(sql);
+		if(rs.next()){
+			//get data and save
+			request.setAttribute("id",(String)(rs.getString("id")));
+			request.setAttribute("username",(String)(rs.getString("username")));
+			request.setAttribute("name",(String)(rs.getString("name")));
+			request.setAttribute("gender",(String)(rs.getString("gender")));
+			request.setAttribute("mobile",(String)(rs.getString("mobile")));
+			request.setAttribute("email",(String)(rs.getString("email")));
+			request.setAttribute("company",(String)(rs.getString("company")));
+			request.setAttribute("address",(String)(rs.getString("address")));
+			request.setAttribute("zipcode",(String)(rs.getString("zipcode")));
+		}
+		rs.close();
+		stm.close();
+		conn.close();
+	}catch(Exception e){
+		e.printStackTrace();
+		return false;
+	} finally {}
+	return true;
+	
+}
+%>
 
 
 
