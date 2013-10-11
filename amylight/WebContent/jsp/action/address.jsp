@@ -42,6 +42,16 @@
 			//search for data
 			list(request,drv,url,usr,pwd,username,pageSize,pageNo);
 			topage="../address.jsp";
+		} else if(method.equals("edit")){
+			//exe searching 
+			select(request,drv,url,usr,pwd,username);
+			topage="../address_edit.jsp";
+		} else if(method.equals("update")){
+			//update data
+			update(request,drv,url,usr,pwd,username);
+			// list data
+			list(request,drv,url,usr,pwd,username,pageSize,pageNo);
+			topage="../address.jsp";
 		}
 	}
 %>
@@ -197,10 +207,10 @@
 		ResultSet rs = stm.executeQuery(sql);
 		if(rs.next()){
 			//get data and save
-			request.setAttribute("id",(String)(rs.getString("id")));
+			request.setAttribute("id",(String)(rs.getString("Id")));
 			request.setAttribute("username",(String)(rs.getString("username")));
 			request.setAttribute("name",(String)(rs.getString("name")));
-			request.setAttribute("gender",(String)(rs.getString("gender")));
+			request.setAttribute("gender",(String)(rs.getString("sex")));
 			request.setAttribute("mobile",(String)(rs.getString("mobile")));
 			request.setAttribute("email",(String)(rs.getString("email")));
 			request.setAttribute("company",(String)(rs.getString("company")));

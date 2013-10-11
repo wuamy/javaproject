@@ -60,7 +60,7 @@
 				Iterator<Hashtable<String,String>>it=list.iterator();
 				while(it.hasNext()){
 					Hashtable<String,String>hash=it.next();
-					String id=hash.get("id");
+					String id=hash.get("Id");
 			%>
 			<tr>
 				<td><%=hash.get("name")%></td>
@@ -70,8 +70,8 @@
 				<td><%=hash.get("company") %></td>
 				<td><%=hash.get("address") %></td>
 				<td><%=hash.get("zipcode") %></td>
-				<td><a href="action/address.jsp?method=edit&id=<%=id%>&pageSize=<%=pageSize%>&pageNo=<%=pageNo %>">Modify</a>&nbsp;&nbsp;
-				<a href="action/address.jsp?method=delete&id=<%=id%>&pageSize=<%=pageSize%>&pageNo=<%=pageNo %>">Cancel</a></td>
+				<td><a href="../action/address.jsp?method=edit&id=<%=id%>&pageSize=<%=pageSize%>&pageNo=<%=pageNo %>">Modify</a>&nbsp;&nbsp;
+				<a href="../action/address.jsp?method=delete&id=<%=id%>&pageSize=<%=pageSize%>&pageNo=<%=pageNo %>">Cancel</a></td>
 			</tr>
 		<%
 			}
