@@ -219,6 +219,46 @@
 }
 %>
 
+<%!public boolean update(HttpServletRequest request, String drv, String url,
+		String usr, String pwd, String username){
+	try {
+		//create connection
+		Class.forName(drv).newInstance();
+		Connection conn = DriverManager.getConnection(url, usr, pwd);
+		Statement stm = conn.createStatement();
+		
+		//get modify data
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String sex = request.getParameter("gender");
+		String mobile = request.getParameter("mobile");
+		String email = request.getParameter("email");
+		String company = request.getParameter("company");
+		String address = request.getParameter("address");
+		String zipcode = request.getParameter("zipcode");
+		
+		// modify SQL
+		String sql="update address set name='"+name+"',sex='"+sex
+			+"',mobile='"+mobile+"',email='"+email+"',company='"+company+"',address='"
+			+address+"',zipcode='"+zipcode+"'where id="+id;
+		
+		//execute the updating sql
+		stm.executeUpdate(sql);
+		stm.close();
+		conn.close();
+		
+	}catch(Exception e){
+		e.printStackTrace();
+		return false;
+		
+	} finally {}
+	
+	return true;
+}
+
+
+%>
+
 
 
 
