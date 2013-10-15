@@ -39,6 +39,7 @@
 		} else if(method.equals("insert")){
 			//execute insert
 			insert(request,drv,url,usr,pwd,username);
+			
 			//search for data
 			list(request,drv,url,usr,pwd,username,pageSize,pageNo);
 			topage="../address.jsp";
@@ -49,6 +50,7 @@
 		} else if(method.equals("update")){
 			//update data
 			update(request,drv,url,usr,pwd,username);
+			
 			// list data
 			list(request,drv,url,usr,pwd,username,pageSize,pageNo);
 			topage="../address.jsp";
