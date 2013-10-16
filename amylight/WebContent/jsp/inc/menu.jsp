@@ -10,7 +10,7 @@
 <table width="100%" bgcolor="#EEEEEE">
 			<tr>
 				<td>
-				<ul class="ulnotab">
+				<ul>
 					<li><a href="welcome.jsp">Home</a></li>
 				</ul>
 				</td>
@@ -18,7 +18,7 @@
 			<tr>
 				<td>
 								
-				<ul class="ulnotab">
+				<ul>
 					<li><a href="action/address.jsp?method=list">AddressBook</a></li>
 					<li><a href="sms.jsp">Short Message</a></li>
 				</ul>
@@ -26,7 +26,7 @@
 			</tr>
 			<tr>
 				<td>
-				<ul class="ulnotab">
+				<ul>
 					<li><a href="schedule.jsp">My Calendar</a></li>
 					<li><a href="worklog.jsp">Work Log</a></li>
 				</ul>
@@ -34,7 +34,7 @@
 			</tr>
 			<tr>
 				<td>
-				<ul class="ulnotab">
+				<ul>
 					<li><a href="notice.jsp">Company Notice</a></li>
 					<li><a href="meeting.jsp">Company Meeting</a></li>
 				</ul>
@@ -42,7 +42,7 @@
 			</tr>
 			<tr>
 				<td>
-				<ul class="ulnotab">
+				<ul>
 					<li><a href="/amylight/jsp/action/logout.jsp">Log Off</a></li>
 				</ul>
 				</td>

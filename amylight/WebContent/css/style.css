@@ -35,7 +35,7 @@ hr {
 
 li {
 	color:#C10202;
-	list-style-type:square;
+	list-style-type:disc;
 }
 
 ul {
@@ -43,11 +43,7 @@ ul {
 	margin-bottom:5px;
 }
 
-.ulnotab {
-	margin-top:0px;
-	margin-bottom:0px;
-	margin-left:16px;
-}
+
 
 form {
 	margin-top:0px;
