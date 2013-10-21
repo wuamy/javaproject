@@ -40,7 +40,13 @@ public class UserBean {
 	public void add(String username, String password, String email){
 		DBAccess db = new DBAccess();
 		if(db.createConn()){
-			String sql="insert into user(username, password, email)value('"+username+')"
+			String sql="insert into user(username, password, email)value('"+username+"','" + password
+					+"','" + email+"')";
+			db.update(sql);
+			db.closeStm();
+			db.closeConn();
+					
+					
 		}
 	}
 
