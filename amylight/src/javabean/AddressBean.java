@@ -153,7 +153,27 @@ public class AddressBean {
 		
 	}
 	
-	public boolean 
+	public boolean update(HttpServletRequest request, String username){
+		// create db connection
+		DBAccess db5 = new DBAccess();
+		if(db5.createConn()){
+			
+			//retrieve modify page param
+			String id = request.getParameter("id");
+			String name = request.getParameter("name");
+			String sex = request.getParameter("sex");
+			String mobile = request.getParameter("mobile");
+			String email = request.getParameter("email");
+			String company = request.getParameter("company");
+			String address = request.getParameter("address");
+			String zipcode = request.getParameter("zipcode");
+			
+			// form sql
+			String sql6 = "update address set name='" + name + "',sex='" + sex
+					+"',"
+			
+		}
+	}
 	
 	
 	
