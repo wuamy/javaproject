@@ -123,8 +123,37 @@ public class AddressBean {
 	}
 	
 	public boolean select(HttpServletRequest request, String username){
+		//create db connection
+		DBAccess db4 = new DBAccess();
+		if(db4.createConn()){
+			
+			// search for current record
+			String id = request.getParameter("id");
+			String sql5 = "select * from address where id=" + id;
+			db4.query(sql5);
+			if(db4.next()){
+				//select current row
+				request.setAttribute("id", db4.getValue("id"));
+				request.setAttribute("username", db4.getValue("username"));
+				request.setAttribute("name", db4.getValue("name"));
+				request.setAttribute("sex", db4.getValue("sex"));
+				request.setAttribute("mobile", db4.getValue("mobile"));
+				request.setAttribute("email", db4.getValue("email"));
+				request.setAttribute("company", db4.getValue("company"));
+				request.setAttribute("address", db4.getValue("address"));
+				request.setAttribute("zipcode", db4.getValue("zipcode"));
+				
+			}
+			db4.closeRs();
+			db4.closeStm();
+			db4.closeConn();
+		}
+		return true;
+		
 		
 	}
+	
+	public boolean 
 	
 	
 	
