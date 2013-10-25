@@ -84,8 +84,48 @@ public class AddressBean {
 			
 			//regarding id and delete record
 			String id = request.getParameter("id");
+			String sql3 = "delete from address where id=" + id;
+			db2.update(sql3);
+			db2.closeStm();
+			db2.closeConn();
 		}
+		return true;
 		
 	}
-
+	
+	public boolean insert(HttpServletRequest request, String username){
+		// create db connection
+		DBAccess db3 = new DBAccess();
+		if(db3.createConn()){
+			
+			//select new form data
+			String name = request.getParameter("name");
+			String sex = request.getParameter("sex");
+			String mobile =request.getParameter("mobile");
+			String email = request.getParameter("email");
+			String company = request.getParameter("company");
+			String address = request.getParameter("address");
+			String zipcode = request.getParameter("zipcode");
+			
+			// organize new SQL
+			String sql4 = "insert int address(username, name sex,mobile,company,address,zipcode)";
+			sql4 +="value('" + username + "," + name + "," + sex + "," 
+			+ mobile + "," + email + "," + company + "," + address + "," + zipcode + "')";
+			
+			// execute insert 
+			db3.update(sql4);
+			db3.closeStm();
+			db3.closeConn();
+			
+		}
+	
+		return false;
+	}
+	
+	public boolean select(HttpServletRequest request, String username){
+		
+	}
+	
+	
+	
 }
