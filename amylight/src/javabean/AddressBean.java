@@ -108,7 +108,7 @@ public class AddressBean {
 			String zipcode = request.getParameter("zipcode");
 			
 			// organize new SQL
-			String sql4 = "insert int address(username, name sex,mobile,company,address,zipcode)";
+			String sql4 = "insert into address(username, name, sex,mobile,company,address,zipcode)";
 			sql4 +="value('" + username + "," + name + "," + sex + "," 
 			+ mobile + "," + email + "," + company + "," + address + "," + zipcode + "')";
 			
