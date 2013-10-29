@@ -81,8 +81,8 @@ String pageNo = (String)request.getAttribute("pageNo");
 			</tr>
 			<tr>
 				<td>Gender:</td>
-				<td><input type="text" name="gender" maxlength="10" 
-				value="<%=request.getAttribute("gender")%>">
+				<td><input type="text" name="sex" maxlength="10" 
+				value="<%=request.getAttribute("sex")%>">
 				</td>
 			</tr>
 			<tr>

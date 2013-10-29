@@ -52,7 +52,7 @@ public class AddressBean {
 			while(db1.next()){
 				// search for data
 				Hashtable<String, String> hash = new Hashtable<String, String>();
-				hash.put("id", db1.getValue("id"));
+				hash.put("id", db1.getValue("Id"));
 				hash.put("username", db1.getValue("username"));
 				hash.put("name", db1.getValue("name"));
 				hash.put("sex", db1.getValue("sex"));
