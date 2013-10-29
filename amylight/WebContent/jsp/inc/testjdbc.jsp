@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ include file="db.jsp" %>
+<%@ include file="db_backup.jsp" %>
 <%
 	String sql="select * from user";
 	try {

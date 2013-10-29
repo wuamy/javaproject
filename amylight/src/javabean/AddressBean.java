@@ -170,9 +170,17 @@ public class AddressBean {
 			
 			// form sql
 			String sql6 = "update address set name='" + name + "',sex='" + sex
-					+"',"
+					+"',mobile='" + mobile + "',email='" + email + "',company='"
+					+ company + "',address='" + address + "',zipcode='" + zipcode
+					+ "'where id=" + id;
+			
+			//exe updating
+			db5.update(sql6);
+			db5.closeStm();
+			db5.closeConn();
 			
 		}
+		return true;
 	}
 	
 	
