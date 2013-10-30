@@ -19,7 +19,7 @@
 				<td>
 								
 				<ul>
-					<li><a href="action/address.jsp?method=list">AddressBook</a></li>
+					<li><a href="/amylight/jsp/action/address.jsp?method=list">AddressBook</a></li>
 					<li><a href="sms.jsp">Short Message</a></li>
 				</ul>
 				</td>

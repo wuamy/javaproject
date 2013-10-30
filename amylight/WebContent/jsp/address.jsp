@@ -60,7 +60,7 @@
 				Iterator<Hashtable<String,String>>it=list.iterator();
 				while(it.hasNext()){
 					Hashtable<String,String>hash=it.next();
-					String id=hash.get("Id");
+					String id=hash.get("id");
 			%>
 			<tr>
 				<td><%=hash.get("name")%></td>

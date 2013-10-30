@@ -52,7 +52,7 @@ public class AddressBean {
 			while(db1.next()){
 				// search for data
 				Hashtable<String, String> hash = new Hashtable<String, String>();
-				hash.put("id", db1.getValue("Id"));
+				hash.put("id", db1.getValue("id"));
 				hash.put("username", db1.getValue("username"));
 				hash.put("name", db1.getValue("name"));
 				hash.put("sex", db1.getValue("sex"));
@@ -61,6 +61,14 @@ public class AddressBean {
 				hash.put("company", db1.getValue("company"));
 				hash.put("address", db1.getValue("address"));
 				hash.put("zipcode", db1.getValue("zipcode"));
+				
+				// testing dataoutput
+				//Collection<String> values = hash.values();
+				//Iterator<String> iter = values.iterator();
+				
+				//String str = iter.next();
+				//System.out.print(str + ",");
+				
 				
 				//save current row
 				list.add(hash);
@@ -74,7 +82,7 @@ public class AddressBean {
 			
 		
 		}
-				return false;
+				return true;
 	}
 	
 	public boolean delete(HttpServletRequest request, String username){
@@ -119,7 +127,7 @@ public class AddressBean {
 			
 		}
 	
-		return false;
+		return true;
 	}
 	
 	public boolean select(HttpServletRequest request, String username){
