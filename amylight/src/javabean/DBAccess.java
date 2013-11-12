@@ -3,13 +3,13 @@ import java.sql.*;
 
 public class DBAccess {
 	//get drive
-	private String drv="com.mysql.jdbc.Driver";
+	public static String drv="com.mysql.jdbc.Driver";
 	//connect URL
-	private String url="jdbc:mysql://localhost:3306/demo";
+	public static String url="jdbc:mysql://localhost:3306/demo";
 	//user
-	private String usr="root";
+	public static String usr="root";
 	// password
-	private String pwd="mysqladmin";
+	public static String pwd="mysqladmin";
 	// database connection
 	private Connection conn = null;
 	//database statement
