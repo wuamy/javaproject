@@ -9,4 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <context-param>
+      <description>Location to store uploaded file</description>
+      <param-name>file-upload</param-name>
+      <param-value>C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\webapps\data\</param-value>
+  </context-param>
 </web-app>
